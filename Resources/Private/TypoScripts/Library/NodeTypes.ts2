@@ -1,0 +1,102 @@
+// Override default node types
+
+prototype(TYPO3.Neos.NodeTypes:Image) {
+	templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/NodeTypes/Image.html'
+}
+
+// Individual node types
+
+prototype(TYPO3.Typo3Dk:Section) {
+    // give the layout property from the current node to my template as "layout" right side yaml, left side fluid
+	attributes.class = ${q(node).property('color') + ' ' + (q(node).property('overflowHidden') ? 'overflow-hidden' : '')}
+	attributes.data-magellan-destination = ${'c' + q(node).property('_identifier')}
+
+	attributes.id = ${'c' + q(node).property('_identifier')}
+
+	column0 = TYPO3.Neos:ContentCollection {
+		nodePath = 'column0'
+	}
+
+}
+
+prototype(TYPO3.Typo3Dk:DynamicColumns) {
+	column0 = TYPO3.Neos:ContentCollection {
+		nodePath = 'column0'
+	}
+}
+
+prototype(TYPO3.Typo3Dk:Row) {
+	column0 = TYPO3.Neos:ContentCollection {
+		nodePath = 'column0'
+	}
+}
+
+prototype(TYPO3.Typo3Dk:TwoColumns) {
+	column0 = TYPO3.Neos:ContentCollection {
+		nodePath = 'column0'
+	}
+	column1 = TYPO3.Neos:ContentCollection {
+		nodePath = 'column1'
+	}
+}
+
+prototype(TYPO3.Typo3Dk:ThreeColumns) {
+	column0 = TYPO3.Neos:ContentCollection {
+		nodePath = 'column0'
+	}
+	column1 = TYPO3.Neos:ContentCollection {
+		nodePath = 'column1'
+	}
+	column2 = TYPO3.Neos:ContentCollection {
+		nodePath = 'column2'
+	}
+}
+
+prototype(TYPO3.Typo3Dk:SliderContainer) {
+	column0 = TYPO3.Neos:ContentCollection {
+		nodePath = 'column0'
+	}
+}
+
+// News configuration
+
+prototype(TYPO3.Typo3Dk:NewsTeaser) {
+
+	# TODO Use .slice() FlowQuery operator if available
+	posts = ${q(site).find(q(node).property('blogNodePath')).children('[instanceof RobertLemke.Plugin.Blog:Post]').slice(0, 2)}
+
+	postRenderer = TYPO3.TypoScript:Template {
+		templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/NodeTypes/NewsTeaser.html'
+		sectionName = 'post'
+
+		node = ${node}
+		title = ${q(node).property('title')}
+		detailLinkLabel = ${q(node).property('detailLinkLabel')}
+		teaserText = ${q(node).property('teaserText')}
+	}
+}
+
+prototype(RobertLemke.Plugin.Blog:Post) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/NodeTypes/NewsPost.html'
+}
+
+prototype(RobertLemke.Plugin.Blog:Comment) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/NodeTypes/Comment.html'
+}
+
+prototype(RobertLemke.Plugin.Blog:Quote) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/NodeTypes/Quote.html'
+}
+
+
+// Quote element
+
+prototype(TYPO3.Typo3Dk:Blockquote) {
+	templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/NodeTypes/Blockquote.html'
+}
+
+// Youtube element
+
+prototype(TYPO3.NeosDemoTypo3Org:Youtube) < prototype(TYPO3.Neos:Content) {
+	attributes.class = 'responsive-video'
+}

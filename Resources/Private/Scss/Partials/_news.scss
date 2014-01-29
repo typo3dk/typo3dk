@@ -1,0 +1,30 @@
+.news-teaser {
+	margin-top: 12px;
+
+	h2 {
+		margin-bottom: $paragraph-margin-bottom;
+	}
+}
+
+section.news-head {
+	padding-bottom: 0em;
+
+	.teaser-text {
+		font-family: $font-share;
+		font-size: $h6-font-size + em-calc(2);
+
+		@media #{$small} {
+			font-size: $h5-font-size;
+		}
+	}
+}
+
+.news-content {
+	.neos-contentcollection {
+		&:first-child {
+			section {
+				padding-top: 2em;
+			}
+		}
+	}
+}

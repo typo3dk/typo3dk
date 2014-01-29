@@ -1,0 +1,4 @@
+prototype(TYPO3.Typo3Dk:SectionMenu) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/TypoScriptObjects/SectionMenu.html'
+	items = ${q(documentNode).children('main').children('[instanceof TYPO3.Typo3Dk:Section][showInSectionMenu = true]')}
+}

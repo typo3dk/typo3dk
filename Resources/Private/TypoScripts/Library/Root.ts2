@@ -1,0 +1,78 @@
+/**
+ * Root TypoScript template for the TYPO3 Neos Website Site
+ */
+
+# Include plugins
+include: resource://RobertLemke.Plugin.Blog/Private/TypoScripts/Library/NodeTypes.ts2
+
+page = Page
+
+page.head {
+	stylesheets.site = TYPO3.TypoScript:Template {
+		templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/Page/Default.html'
+		sectionName = 'stylesheets'
+	}
+
+	javascripts.site = TYPO3.TypoScript:Template {
+		templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/Page/Default.html'
+		sectionName = 'scripts'
+	}
+
+	meta = TYPO3.TypoScript:Template {
+		templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/Page/Default.html'
+		sectionName = 'meta'
+	}
+
+	titleTag.content = TYPO3.TypoScript:Collection {
+		collection = ${Array.reverse(Array.slice(q(node).add(q(node).parents()).get(),0, -1))}
+		itemName = 'node'
+		iterationName = 'iterator'
+		itemRenderer = ${q(node).property('title') + ' - '}
+
+		@process.suffix = ${value + 'TYPO3 Neos'}
+	}
+}
+
+page.body {
+	templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/Page/Default.html'
+	sectionName = 'body'
+
+	parts {
+		menu = Menu {
+			templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/TypoScriptObjects/Menu.html'
+			maximumLevels = 2
+			entryLevel = 1
+		}
+	}
+
+	// These are your content areas, you can define as many as you want, just name them and the nodePath.
+	content {
+		main = PrimaryContent {
+			nodePath = 'main'
+		}
+
+		sectionMenu = TYPO3.TypoScript:Value {
+			sectionMenu = TYPO3.Typo3Dk:SectionMenu
+			value = ${q(documentNode).property('showSectionMenu') ? this.sectionMenu : ''}
+		}
+
+		subMenu = Menu {
+			templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/TypoScriptObjects/SubMenu.html'
+			maximumLevels = 1
+			entryLevel = 2
+
+			@process.hideForBlogPost = ${q(documentNode).is('[instanceof RobertLemke.Plugin.Blog:Post]') ? '' : value}
+		}
+	}
+
+	hasDocumentChildNode = ${q(documentNode).children('[instanceof TYPO3.Neos:Document]').count() > 0}
+
+	// Add JS includes for the site before the closing body tag
+	javascripts.site = TYPO3.TypoScript:Template {
+		templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/Page/Default.html'
+		sectionName = 'footerScripts'
+	}
+}
+
+include: TypoScriptObjects.ts2
+include: NodeTypes.ts2
