@@ -10,6 +10,14 @@
 
 @import "Partials/submenu", "Partials/section-menu", "Partials/mailchimp", "Partials/news";
 
+.top-bar {
+	background: $darkest-gray;
+}
+
+header {
+	border-bottom: 2px solid darken($darkest-gray, 45%);
+}
+
 // Background Colors for the different sections
 .orange {
 	background-color: $orange;
@@ -97,7 +105,7 @@ p {
 h4,
 .h4 {
 	margin-bottom: 25px;
-	color: $middle-blue;
+	color: $light-blue;
 
 	&.white {
 		color: $white;
@@ -564,7 +572,7 @@ footer {
 	}
 
 	h4 {
-		color: $white;
+		color: $light-blue;
 	}
 
 	.margin-top {

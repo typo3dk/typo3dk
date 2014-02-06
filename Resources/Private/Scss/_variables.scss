@@ -8,12 +8,15 @@ $light-gray2: #848484;
 $light-gray: #5b5b5b; // Background color + line color
 $middle-gray: #3f3f3f;
 $gray: #323232;
-$dark-gray: #222222;
-$darkest-gray: #141414;
+// $dark-gray: #222222;
+$dark-gray: whitesmoke;
+// $darkest-gray: #141414;
+$darkest-gray: white;
+$body-font-color: #5b5b5b !default;
 $orange: #ff8700;
-$light-blue: #39c6ff; // Hovers
-$middle-blue: #00b5ff;
-$blue: #007fb2; // Links + H2 >
+$light-blue: #FF8700; // Hovers
+$middle-blue: darken(#FF8700, 10%);
+$blue: darken(#FF8700, 25%); // Links + H2 >
 $white: #ffffff;
 $dark-white: #e6e6e6;
 
