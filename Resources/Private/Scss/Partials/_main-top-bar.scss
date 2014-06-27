@@ -15,7 +15,7 @@ header {
 	}
 
 	ul.title-area {
-		background: $darkest-gray;
+		background: $white;
 		position: static;
 
 		@media #{$topbar-media-query} {
@@ -57,7 +57,7 @@ header {
 			&.active,
 			&.current {
 				> a {
-					background: $middle-blue;
+					background: $orange;
 					color: $white;
 				}
 			}
@@ -81,18 +81,18 @@ header {
 				a:not(.button) {
 					margin: 0px;
 					padding: 10px 10px 10px 10px;
-					background: $middle-blue;
+					background: $orange;
 					font-size: em-calc(18);
 
 					&:hover {
-						background: darken($middle-blue, 10%);
+						background: darken($orange, 10%);
 					}
 				}
 
 				&.active,
 				&.current {
 					a:not(.button) {
-						background: darken($middle-blue, 10%);
+						background: $orange;
 					}
 				}
 			}
@@ -139,8 +139,8 @@ header {
 					line-height: 30px;
 					@include border-radius(17px);
 					@include box-sizing(border-box);
-					border: 2px solid $light-blue;
-					color: $light-blue;
+					border: 2px solid $orange;
+					color: $orange;
 					text-align: center;
 
 					&:before {
@@ -157,7 +157,7 @@ header {
 		.top-bar-section li {
 			border-right: 0px;
 			padding: 0px 20px;
-			background: $light-blue;
+			background: $orange;
 		}
 
 		.toggle-topbar a {

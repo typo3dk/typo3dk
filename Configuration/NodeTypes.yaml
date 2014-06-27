@@ -51,12 +51,8 @@
                 label: 'Gray'
               'light-gray':
                 label: 'Light Gray'
-              'dark-gray':
-                label: 'Dark Gray'
-              'blue':
-                label: 'Blue'
-              'white-bg':
-                label: 'White'
+              'off-white':
+                label: 'Off-white'
     showInSectionMenu:
       type: boolean
       ui:
@@ -285,11 +281,13 @@
           editorOptions:
             values:
               'white':
-                label: 'Default'
-              'blue-text':
-                label: 'Blue'
+                label: 'White'
+              'light-gray':
+                label: 'Light Gray'
               'gray-text':
                 label: 'Gray'
+              'orange':
+                label: 'Orange'
     border:
       type: boolean
       ui:

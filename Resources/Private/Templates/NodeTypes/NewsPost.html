@@ -7,13 +7,12 @@
 		<div class="row">
 			<div class="columns small-12">
 				<neos:contentElement node="{node}">
-					<h1 itemprop="name headline"><neos:contentElement.editable property="title">{title}</neos:contentElement.editable></h1>
+					<h1 class="light-gray" itemprop="name headline"><neos:contentElement.editable property="title">{title}</neos:contentElement.editable></h1>
 				</neos:contentElement>
 				<p class="byline"><em>
-					by
-					<span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name">{node.properties.author}</span></span>
-					on
-					<time datetime="{f:format.date(date: node.properties.datePublished, format: 'c')}" itemprop="datePublished"><f:format.date format="F jS, Y">{node.properties.datePublished}</f:format.date></time>
+					Af
+					<span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name">{node.properties.author}</span></span>,
+					publiceret <time datetime="{f:format.date(date: node.properties.datePublished, format: 'c')}" itemprop="datePublished"><f:format.date format="j F Y" localeFormatType="date" localeFormatLength="full" forceLocale="da">{node.properties.datePublished}</f:format.date></time>
 				</em></p>
 				<p class="teaser-text">{teaserText}</p>
 			</div>

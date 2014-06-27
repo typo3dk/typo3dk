@@ -60,11 +60,6 @@
 				font-family: $body-font-family;
 				line-height: em-calc(19);
 				display: inline;
-
-				&:hover {
-					color: $white;
-					background: transparent;
-				}
 			}
 
 			&.external > a {
@@ -85,11 +80,11 @@
 			}
 
 			&:hover {
+				background: transparent;
 				a {
 					background: transparent;
-					color: $white;
+					color: $orange;
 				}
-
 				&.external > a {
 					&:after {
 						border-color: $orange transparent transparent transparent;
@@ -123,7 +118,7 @@
 							&:hover,
 							&.active,
 							&.current {
-								background: $blue;
+								background: $orange;
 							}
 						}
 					}
@@ -169,7 +164,7 @@
 			border-bottom: 1px solid $white;
 
 			&:hover {
-				color: $light-blue;
+				color: $orange;
 				text-decoration: none;
 				background: lighten($light-gray, 50%);
 			}
@@ -178,7 +173,7 @@
 		.top-bar-section li.has-dropdown {
 			> a:not(.button):after {
 				content: '>';
-				color: $light-blue;
+				color: $orange;
 				font-size: em-calc(28);
 				margin-top: -0.7em;
 				border: none;

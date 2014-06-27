@@ -29,7 +29,7 @@ page.head {
 		iterationName = 'iterator'
 		itemRenderer = ${q(node).property('title') + ' - '}
 
-		@process.suffix = ${value + 'TYPO3 Neos'}
+		@process.suffix = ${value + 'TYPO3 Danmark'}
 	}
 }
 
@@ -54,14 +54,6 @@ page.body {
 		sectionMenu = TYPO3.TypoScript:Value {
 			sectionMenu = TYPO3.Typo3Dk:SectionMenu
 			value = ${q(documentNode).property('showSectionMenu') ? this.sectionMenu : ''}
-		}
-
-		subMenu = Menu {
-			templatePath = 'resource://TYPO3.Typo3Dk/Private/Templates/TypoScriptObjects/SubMenu.html'
-			maximumLevels = 1
-			entryLevel = 2
-
-			@process.hideForBlogPost = ${q(documentNode).is('[instanceof RobertLemke.Plugin.Blog:Post]') ? '' : value}
 		}
 	}
 

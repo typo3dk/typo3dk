@@ -21,20 +21,20 @@
 				height: 12px;
 				width: 12px;
 				left: 20px;
-				border: 1px solid $middle-blue;
+				border: 1px solid $orange;
 				@include border-radius(25px);
 			}
 
 			a {
-				color: $middle-blue;
+				color: $orange;
 
 				&:hover {
-					color: $blue;
+					color: $orange;
 				}
 			}
 
 			&.active {
-				background: $middle-blue;
+				background: $orange;
 
 				&:before {
 					background: $white;

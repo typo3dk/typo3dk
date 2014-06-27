@@ -8,43 +8,33 @@
 // Foundation Components
 @import "../Requirements/Foundation/scss/normalize", "foundation", "Partials/orbit";
 
-@import "Partials/submenu", "Partials/section-menu", "Partials/mailchimp", "Partials/news";
+@import "Partials/section-menu", "Partials/mailchimp", "Partials/news";
 
 .top-bar {
-	background: $darkest-gray;
+	background: $white;
 }
 
-header {
-	border-bottom: 2px solid darken($darkest-gray, 45%);
-}
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $light-gray;
 
-// Background Colors for the different sections
-.orange {
-	background-color: $orange;
-}
-
-.light-gray {
-	background-color: $light-gray;
-}
-
-.gray {
-	background-color: $gray;
-}
-
-.blue {
-	background-color: $blue;
-}
-
-.dark-gray {
-	background-color: $dark-gray;
-}
-
-.darkest-gray {
-	background-color: $darkest-gray;
-}
-
-.white-bg {
-	background-color: $white;
+	&.gray-text {
+		color: $middle-gray !important;
+	}
+	&.orange {
+		color: $orange !important;
+	}
+	&.light-gray {
+		color: $light-gray3 !important;
+	}
+	&.white {
+		color: $white !important;
+	}
 }
 
 // Borders
@@ -64,13 +54,6 @@ header {
 	}
 }
 
-.dark-gray {
-	.has-border,
-	hr {
-		border-color: $light-gray;
-	}
-}
-
 .has-border-orange {
 	border-bottom: 1px solid $orange;
 }
@@ -79,37 +62,14 @@ hr {
 	color: $white;
 }
 
-// Headings
-h1,
-h2,
-h3,
-h5,
-h6 {
-	color: $white;
-
-	&.blue-text {
-		color: $middle-blue;
-	}
-
-	&.gray-text {
-		color: $dark-gray;
-	}
-}
-
 p {
 	+ h3 {
 		margin-top: 40px;
 	}
 }
 
-h4,
-.h4 {
+h4 {
 	margin-bottom: 25px;
-	color: $light-blue;
-
-	&.white {
-		color: $white;
-	}
 }
 
 .two-cols {
@@ -140,7 +100,7 @@ a.svg {
 // Button overrides
 .button.medium {
 	&:hover {
-		background: $blue;
+		background: $orange;
 	}
 }
 
@@ -173,7 +133,7 @@ blockquote {
 	margin: 0px 0px 30px 30px;
 	padding: 0px 0px 0px 30px;
 
-	border-left: 4px solid $light-blue;
+	border-left: 4px solid $orange;
 
 	p {
 		margin: 0px;
@@ -197,7 +157,7 @@ blockquote {
 			&:before {
 				@extend [class^="neic-"]:before;
 				@extend .neic-arrow:before;
-				color: $light-blue;
+				color: $orange;
 				position: absolute;
 				left: 30px;
 				font-size: 12px;
@@ -237,7 +197,7 @@ blockquote {
 
 				&:before {
 					@extend .neic-check:before;
-					border: 1px solid $light-blue;
+					border: 1px solid $orange;
 					@include border-radius(26px);
 					color: $white;
 					font-size: 18px;
@@ -275,16 +235,6 @@ blockquote {
 		}
 	}
 
-	.white-bg {
-		ul.feature-list {
-			li {
-				&:before {
-					color: $darkest-gray;
-				}
-			}
-		}
-	}
-
 	ol {
 		counter-reset: li;
 		list-style: none;
@@ -299,7 +249,7 @@ blockquote {
 			&:before {
 				counter-increment: li;
 				content: counter(li, decimal)". ";
-				color: $light-blue;
+				color: $orange;
 				position: absolute;
 				left: 30px;
 			}
@@ -307,7 +257,7 @@ blockquote {
 	}
 
 	figcaption {
-		background: $middle-blue;
+		background: $orange;
 		p {
 			font-size: em-calc(14);
 			text-align: left;
@@ -347,8 +297,8 @@ blockquote {
 	}
 
 	pre {
-		color: $light-blue;
-		background: $darkest-gray;
+		color: $orange;
+		background: $white;
 		padding: em-calc(22) em-calc(30);
 		margin-bottom: em-calc(25);
 		font-size: em-calc(13);
@@ -364,52 +314,49 @@ blockquote {
 		}
 	}
 
+	&.orange {
+		background-color: $orange;
+	}
+
 	&.gray {
+		background-color: $gray;
 		pre {
 			background: darken($gray, 5%);
 		}
-	}
-
-	&.blue {
-		color: $white;
-
-		a {
-			color: $middle-gray;
-			&:hover {
-				color: darken($middle-gray, 5%);
-			}
-		}
-	}
-
-	&.dark-gray {
-		color: $light-gray2;
-
-		pre {
-			background: darken($dark-gray, 5%);
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: $white;
 		}
 	}
 
 	&.light-gray {
+		background-color: $light-gray;
 		color: $light-gray4;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: $white;
+		}
 
 		pre {
 			background: darken($light-gray, 5%);
 		}
 	}
 
-	&.white-bg {
+	&.off-white {
+		background-color: $off-white;
 		color: $light-gray;
 
-		h1,
-		h2,
-		h3,
-		h4,
-		h5 {
-			color: $darkest-gray;
-		}
-
 		pre {
-			background: $blue;
+			background: $orange;
 			color: $white;
 		}
 
@@ -417,17 +364,17 @@ blockquote {
 		ol {
 			li {
 				&:before {
-					color: $blue;
+					color: $orange;
 				}
 			}
 		}
 
 		a {
-			color: $blue;
+			color: $orange;
 		}
 
 		blockquote {
-			border-color: $blue;
+			border-color: $orange;
 		}
 	}
 }
@@ -470,7 +417,7 @@ blockquote {
 			}
 
 			&:hover {
-				color: $blue;
+				color: $orange;
 			}
 		}
 	}
@@ -572,7 +519,7 @@ footer {
 	}
 
 	h4 {
-		color: $light-blue;
+		color: $orange;
 	}
 
 	.margin-top {
@@ -625,5 +572,16 @@ body {
 		margin-left: -40%;
 		margin-right: -40%;
 		margin-top: -5.9375em;
+	}
+}
+
+.form-navigation {
+	ul li {
+		padding-left: 0;
+		display: inline-block;
+
+		&:before {
+			display: none;
+		}
 	}
 }

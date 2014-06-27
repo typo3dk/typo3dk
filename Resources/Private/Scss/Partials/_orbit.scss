@@ -23,7 +23,7 @@
 		}
 
 		li {
-			border-color: $middle-blue;
+			border-color: $orange;
 			background: transparent;
 			padding: 0px;
 
@@ -33,7 +33,7 @@
 
 			&.active,
 			&:hover {
-				background: $middle-blue;
+				background: $orange;
 				cursor: pointer;
 			}
 		}

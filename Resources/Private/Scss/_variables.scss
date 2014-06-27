@@ -8,16 +8,12 @@ $light-gray2: #848484;
 $light-gray: #5b5b5b; // Background color + line color
 $middle-gray: #3f3f3f;
 $gray: #323232;
-// $dark-gray: #222222;
-$dark-gray: whitesmoke;
-// $darkest-gray: #141414;
-$darkest-gray: white;
+$darkest-gray: #141414;
+
 $body-font-color: #5b5b5b !default;
 $orange: #ff8700;
-$light-blue: #FF8700; // Hovers
-$middle-blue: darken(#FF8700, 10%);
-$blue: darken(#FF8700, 25%); // Links + H2 >
 $white: #ffffff;
+$off-white: whitesmoke;
 $dark-white: #e6e6e6;
 
 $not-mobile-nav: 'min-width: 939px';
@@ -109,7 +105,7 @@ $font-quotes: "Georgia", "Times New Roman", serif;
 
 // Colors
 
-$primary-color: $middle-blue;
+$primary-color: $orange;
 $secondary-color: #e9e9e9;
 $alert-color: #c60f13;
 $success-color: #5da423;
@@ -259,7 +255,7 @@ $paragraph-margin-bottom: 25px;
 
 // $anchor-text-decoration: none;
 // $anchor-font-color: $primary-color;
-$anchor-font-color-hover: $blue;
+$anchor-font-color-hover: $orange;
 
 // Style the <hr> element
 
@@ -1294,7 +1290,7 @@ $orbit-bullet-nav-color-active: $orange;
 // Background color for the top bar
 
 // $topbar-bg-color: #111;
-$topbar-bg-color: $darkest-gray;
+$topbar-bg-color: $white;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1314,16 +1310,16 @@ $topbar-bg-color: $darkest-gray;
 // Style the top bar dropdown elements
 
 // $topbar-dropdown-bg: #222;
-$topbar-dropdown-bg: $middle-blue;
+$topbar-dropdown-bg: $orange;
 // $topbar-dropdown-link-color: #fff;
-$topbar-dropdown-link-bg: $middle-blue;
+$topbar-dropdown-link-bg: $orange;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.5;
 
 // Set the link colors and styles for top-level nav
 
-$topbar-link-color: $light-blue;
+$topbar-link-color: $orange;
 $topbar-link-color-hover: $white;
 $topbar-link-color-active: $white;
 // $topbar-link-weight: bold;
