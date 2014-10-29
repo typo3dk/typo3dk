@@ -2,12 +2,12 @@ TYPO3:
   Flow:
     i18n:
       defaultLocale: 'da'
-Neos:
-  userInterface:
-    editPreviewModes:
-      print:
-        isEditingMode: FALSE
-        isPreviewMode: TRUE
-        typoScriptRenderingPath: 'print'
-        title: 'Print'
-        position: 200
+  Neos:
+    userInterface:
+      editPreviewModes:
+        print:
+          isEditingMode: FALSE
+          isPreviewMode: TRUE
+          typoScriptRenderingPath: 'print'
+          title: 'Print'
+          position: 200
