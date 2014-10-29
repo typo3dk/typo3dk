@@ -66,5 +66,7 @@ page.body {
 	}
 }
 
+print < page
+
 include: TypoScriptObjects.ts2
 include: NodeTypes.ts2
